@@ -1,9 +1,12 @@
-import {Editor} from '@/components/editor'
+import Editor from '@/components/editor'
+import Dynamic from '@/components/dynamic'
 
 export default function Home() {
   return (
     <main >
-      <Editor type="web"/>
+      <Dynamic>
+        <Editor type="web"/>
+      </Dynamic>
     </main>
   )
 }

@@ -1,9 +1,9 @@
 'use client'
 
-import {FC, useRef} from 'react'
+import {FC, useEffect, useRef, useState} from 'react'
 import EmailEditor, {EditorRef, EmailEditorProps} from 'react-email-editor'
 
-export const Editor:FC<{type: 'web'|'email'}> = ({type}) => {
+const Editor:FC<{type: 'web'|'email'}> = ({type}) => {
   const emailEditorRef = useRef<EditorRef>(null);
 
   const exportHtml = () => {
@@ -30,3 +30,5 @@ export const Editor:FC<{type: 'web'|'email'}> = ({type}) => {
   return (<><button title="see result in console" onClick={exportHtml}>Export</button>
     <EmailEditor ref={emailEditorRef} onReady={onReady} options={{displayMode:type}} minHeight={700}  /></>)
 }
+
+export default Editor
