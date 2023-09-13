@@ -12,7 +12,9 @@ export default function Home() {
 
     unlayer?.exportHtml((data) => {
       const { design, html } = data;
-      console.log('exportHtml', html);
+      console.log(html);
+      console.log('--------------------')
+      console.log(design)
     });
   };
 
@@ -28,6 +30,7 @@ export default function Home() {
 
   return (
     <main >
+      <button title="see result in console" onClick={exportHtml}>Export</button>
       <EmailEditor ref={emailEditorRef} onReady={onReady} options={{displayMode:"web"}} minHeight={700}  />
     </main>
   )
