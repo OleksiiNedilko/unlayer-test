@@ -32,7 +32,8 @@ const Editor: FC<{ type: 'web' | 'email' }> = ({type}) => {
     <button title="see result in console" onClick={exportHtml}>Export</button>
     <EmailEditor ref={emailEditorRef} onReady={onReady} options={{
       displayMode: type, projectId: 184069, customJS: [
-        'http://localhost:3000/custom.js'
+        // 'http://localhost:3000/custom.js',
+        'https://unlayer-test.vercel.app/custom.js'
         // 'https://localhost:4174/testTool.js'
     //     `
     //     const React = window.unlayer.React;
