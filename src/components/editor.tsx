@@ -50,13 +50,12 @@ const Editor: FC<{ type: 'web' | 'email' }> = ({type}) => {
   const onReady: EmailEditorProps['onReady'] = (unlayer) => {
     // @ts-ignore
     unlayer.registerCallback('previewHtml',function (params, done) {
-      console.log('cb')
       fetch(`https://staging-api.sswmeetings.com/graphql`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'access-token': 'OaamD8BiZbi6U_dHzwEKUg',
-            'client': '7KQ_DQyNlSY2rQYstxMIyw',
+            'access-token': 'auEQs67tA7IYf9pUKgYxiA',
+            'client': 'GwZrdixrik_oxkQUYefctw',
             'uid': 'olek@gojilabs.com'
           },
           body: JSON.stringify({
@@ -76,6 +75,7 @@ const Editor: FC<{ type: 'web' | 'email' }> = ({type}) => {
           console.warn(res.errors)
         }
         let result = Mustache.render(params.html, {admins: res?.data?.searchAdmins||[]});
+        debugger
         console.log(result)
         done({
           html: result, // you can pass your custom html here
